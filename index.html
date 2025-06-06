@@ -10,11 +10,33 @@
 </head>
 
 <body>
-    <!-- Milestone 1 -->
-    <!-- input e button-->
-    <input id="kmInput" placeholder="Km da percorrere">
-    <input id="ageInput" placeholder="Età">
-    <button class="btn btn-primary" id="calcPrice">Calcola prezzo</button>
+    <!-- Form -->
+
+    <section class="buy-ticket py-5">
+        <h1 class="mb-5 text-center">Calcolo prezzo biglietto del treno</h1>
+
+        <form id="ticketForm" class="ticket-form container" style="max-width: 900px;">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label for="nameInput" class="form-label">Nome e Cognome:</label>
+                    <input type="text" class="form-control" id="nameInput" name="nameInput" required />
+                </div>
+                <div class="col-md-4">
+                    <label for="kmInput" class="form-label">Chilometri da percorrere:</label>
+                    <input type="number" class="form-control" id="kmInput" name="kmInput" required />
+                </div>
+                <div class="col-md-4">
+                    <label for="ageInput" class="form-label">Età del passeggero:</label>
+                    <input type="number" class="form-control" id="ageInput" name="ageInput" required />
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" id="calcPrice" class="btn btn-primary">Calcola prezzo</button>
+            </div>
+
+        </form>
+    </section>
 
     <script src="./assets/js/main.js"></script>
 </body>
