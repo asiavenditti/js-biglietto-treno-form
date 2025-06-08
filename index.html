@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biglietto del treno</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body class="text-bg-danger">
+<body>
     <!-- Form -->
     <section class="buy-ticket py-5 ">
         <h1 class="mb-5 text-center">Calcolo prezzo biglietto del treno</h1>
@@ -35,13 +35,14 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <button type="submit" id="calcPrice" class="btn btn-warning">Calcola prezzo</button>
+                <button type="submit" id="calcPrice" class="btn btn-warning">Acquista</button>
             </div>
         </form>
     </section>
     <!-- Biglietto -->
     <section class="your-ticket">
-        <div class="container card my-3 bg-light border-2 border-dark border-opacity-10" style="max-width: 600px;">
+        <div class="container card my-3 bg-light border-2 border-dark border-opacity-10 d-none"
+            style="max-width: 600px;" id="generateTicket">
             <div class="row g-0 flex-column flex-md-row">
                 <div class="col-12 col-md-4 d-flex align-items-center justify-content-center p-4">
                     <img src="assets/img/Barcode-Skull-copy.png" class="img-fluid" alt="code" style="max-width: 100%;">
@@ -50,7 +51,7 @@
                     <div class="card-body border-light border-2 p-3">
                         <h5 class="card-title">Biglietto per <span id="passengerName"></span></h5>
                         <p class="card-text">
-                            Offerta: <strong><span id="ticketType">Standard</span></strong><br>
+                            Offerta: <strong><span id="ticketType"></span></strong><br>
                             Carrozza: <strong><span id="carriageNumber">5</span></strong><br>
                             Codice PNR: <strong><span id="pnrCode">92911</span></strong><br>
                             Prezzo: <strong><span id="ticketPrice"></span></strong>

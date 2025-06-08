@@ -14,20 +14,44 @@ form.addEventListener('submit', function (e) {
     e.preventDefault()
 
     const userKm = Number(document.getElementById('kmInput').value);
-    const userAge = Number(document.getElementById('ageInput').value);
-    let fullPrice = 0.21 * userKm
+    const userAge = document.getElementById('ageSelect').value;
+    const nameValue = document.getElementById('nameInput').value;
+
+
+    let fullPrice = 0.21 * userKm;
     const youngDiscount = 0.8;
     const seniorDiscount = 0.6;
+    let offerType = 'Standard';
 
-    if (userAge < 18) {
+
+
+    if (userAge === 'minor') {
         fullPrice = fullPrice * youngDiscount
-    } else if (userAge > 65) {
-        fullPrice = fullPrice * seniorDiscount
+        offerType = 'Young'
+
+    } else if (userAge === 'senior') {
+        fullPrice = fullPrice * seniorDiscount;
+        offerType = 'Senior';
     } else {
         fullPrice
     }
 
-    console.log('Il prezzo del tuo biglietto è', fullPrice.toFixed(2), '€')
+    console.log('Il prezzo del tuo biglietto è', fullPrice.toFixed(2), '€');
+
+    const ticketType = document.getElementById('ticketType')
+    const newTicket = document.getElementById('generateTicket');
+    const nameTicket = document.getElementById('passengerName');
+    const totalPrice = document.getElementById('ticketPrice');
+
+
+    newTicket.classList.remove('d-none');
+    nameTicket.innerHTML = nameValue;
+    totalPrice.innerHTML = fullPrice.toFixed(2) + ' €';
+    ticketType.innerHTML = offerType;
+
+
+
+
 
 })
 
